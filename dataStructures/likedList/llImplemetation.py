@@ -26,6 +26,16 @@ class LinkedList:
         self._tail = newest
         self._size += 1
 
+    def search(self, key):
+        p = self._head
+        index = 1
+        while p:
+            if p._element == key:
+                return index
+            p = p._next
+            index+=1
+        return -1
+
     def display(self):
         p = self._head
         while p:
@@ -50,3 +60,5 @@ print('Printing Linked List : ')
 L.display()
 
 print('Size : ', len(L))
+
+print('Element found at : ',L.search(4))
