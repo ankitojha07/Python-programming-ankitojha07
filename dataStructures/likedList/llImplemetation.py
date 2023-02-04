@@ -36,7 +36,32 @@ class LinkedList:
             index+=1
         return -1
 
+    # insertion starts here
+    def insertfirst(self, e):
+        newest = _Node(e, None)
+        if self.isempty():
+            self._head = newest
+            self._tail = newest
+        else : 
+            newest._next = self._head
+            self._head = newest
+        self._size +=1
+
+    def insertanywhere(self,e,pos):
+        newest = _Node(e, None)
+        p = self._head
+        i =0
+        while i < pos-1:
+            p = p._next
+            i += 1
+        newest._next = p._next
+        p._next = newest
+        self._size +=1
+
+
+
     def display(self):
+        print()
         p = self._head
         while p:
             if p._next!=None:
@@ -44,9 +69,7 @@ class LinkedList:
             
             else:
                 print(p._element)
-            p = p._next
-
-            
+            p = p._next   
         print()
 
 L = LinkedList()
@@ -61,4 +84,20 @@ L.display()
 
 print('Size : ', len(L))
 
-print('Element found at : ',L.search(4))
+# print('Element found at : ',L.search(4))
+print()
+print()
+print("--------------------- After insertion at first ------------------------------------- ")
+L.insertfirst(90)
+print('Printing Linked List : ')
+L.display()
+print('Size : ', len(L))
+
+#insert at anywhere
+print()
+print()
+print("--------------------- After insertion at Position ------------------------------------- ")
+L.insertanywhere(94,4)
+print('Printing Linked List : ')
+L.display()
+print('Size : ', len(L))
