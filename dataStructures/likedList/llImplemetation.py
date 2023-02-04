@@ -80,12 +80,25 @@ class LinkedList:
         while i<len(self) -1:
             p = p._next
             i = i+1
-            
         self._tail = p
         e = p._element
         self._tail._next = None
         self._size -= 1
         return e
+
+    def deleteanywhere(self,pos):
+        if self.isempty():
+            print("List is empty")
+            return
+        p = self._head
+        i =1
+        while i<pos-1:
+            p = p._next
+            i +=1
+        e = p._next._element
+        p._next = p._next._next
+        self._size -=1
+        return e 
 
     def display(self):
         print()
@@ -133,6 +146,22 @@ print()
 print()
 print("--------------------- After Deleting First node ------------------------------------- ")
 d = L.deletefirst()
+L.display()
+print('Deleted element was : ',d)
+print('Size : ', len(L))
+
+print()
+print()
+print("--------------------- After Deleting Last node ------------------------------------- ")
+d = L.deletefirst()
+L.display()
+print('Deleted element was : ',d)
+print('Size : ', len(L))
+
+print()
+print()
+print("--------------------- After Deleting Randome node ------------------------------------- ")
+d = L.deleteanywhere(3)
 L.display()
 print('Deleted element was : ',d)
 print('Size : ', len(L))
