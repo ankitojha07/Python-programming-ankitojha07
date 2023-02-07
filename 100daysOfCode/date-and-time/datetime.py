@@ -1,2 +1,5 @@
-import datetime
-x = datetime.datetime.now()
+import _datetime
+
+x = _datetime.datetime.now()
+
+print(x)
