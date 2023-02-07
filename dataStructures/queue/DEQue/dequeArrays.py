@@ -38,16 +38,25 @@ class DeQueueArray:
             return
         return self._data[-1]
 
+    def display(self):
+        i = 0
+        if self.isempty():
+            print('Empty DEQueue')
+            return 
+        else:
+            while i< len(self._data):
+                print(self._data[i], end=' ')
+                i += 1
+
 d = DeQueueArray()
-d.addfirst(9)
-d.addfirst(12)
-d.addfirst(14)
-d.addfirst(14)
+d.addfirst(9)  # 4
+d.addfirst(12) # 3
+d.addfirst(14) # 2
+d.addfirst(16) # 1
 d.addlast(20)
 
 
 print(d.removefirst())
 print(d.first())
 
-print(d._data)
-
+d.display()
