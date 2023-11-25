@@ -1,7 +1,8 @@
-
+#The try block will generate a NameError, because x is not defined:
 
 try:
-    a = int(input("Enter a number : "))
-    print(a+3)
-except Exception as e : 
-    print("Some error occured : ", e)
+  print(x)
+except NameError:
+  print("Variable x is not defined")
+except:
+  print("Something else went wrong")
