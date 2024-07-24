@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Path</title>
+</head>
+<body>
+<div>
+    <h1>Upload path to the file below:</h1>
+    <form action="{{ url_for('excel_filters')}}" method="post">
+<label for="path">Full Path:</label>
+<input id="path" name="path" placeholder="Enter path here..." type="text">
+<button type="submit">Submit</button>
+        </form>
+</div>
+</body>
+</html>
